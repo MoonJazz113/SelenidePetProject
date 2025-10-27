@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Map;
 
-public class ElementsTest extends BaseTest{
+public class ElementsTests extends BaseTest{
 
     private final static String BASE_URL = "https://demoqa.com";
     private final static String FULL_NAME = "Example Name";

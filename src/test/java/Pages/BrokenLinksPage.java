@@ -4,11 +4,10 @@ import Api.Specifications;
 import com.codeborne.selenide.SelenideElement;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import org.openqa.selenium.WebElement;
-import io.restassured.RestAssured.*;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class BrokenLinksPage {
     private final SelenideElement validImage = $x("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/img[1]");
@@ -20,15 +19,18 @@ public class BrokenLinksPage {
         WebElement image = validImage.toWebElement();
         return Boolean.TRUE.equals(executeJavaScript("return arguments[0].complete && arguments[0].naturalWidth > 0;", image));
     }
+
     public boolean isInvalid() {
         WebElement image = invalidImage.toWebElement();
         return Boolean.FALSE.equals(executeJavaScript("return arguments[0].complete && arguments[0].naturalWidth > 0;", image));
     }
+
     public boolean getStatusCode200() {
         String link = validLink.getAttribute("href");
         int statusCode = RestAssured.get(link).getStatusCode();
         return statusCode == 200;
     }
+
     public boolean getStatusCode500() {
         String link = invalidLink.getAttribute("href");
         int statusCode = RestAssured.given(new RequestSpecBuilder()

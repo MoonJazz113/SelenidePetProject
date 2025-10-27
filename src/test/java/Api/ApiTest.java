@@ -4,8 +4,6 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static io.restassured.path.json.JsonPath.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -14,11 +12,6 @@ public class ApiTest {
     private final static String userCreateUrl = "api/users";
     private final static String registerSuccess = "api/register";
 
-    /**
-     * Тест для списка пользователей.
-     * 1) Проверка совпадения содержания id в аватарах
-     * 2) Проверка корректности создания пользователя
-     */
     @Test
     public void usersTest() {
         List<UserData> data = RestAssured.given(Specifications.requestSpecification())

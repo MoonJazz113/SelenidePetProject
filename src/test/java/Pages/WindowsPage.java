@@ -1,13 +1,8 @@
 package Pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 
-import static com.codeborne.selenide.CollectionCondition.empty;
-import static com.codeborne.selenide.Condition.be;
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.*;
 
 public class WindowsPage {

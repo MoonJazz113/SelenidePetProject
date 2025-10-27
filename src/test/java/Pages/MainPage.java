@@ -11,6 +11,7 @@ public class MainPage {
     private final SelenideElement afwHref = $x("//h5[text()='Alerts, Frame & Windows']");
     private final SelenideElement bookStoreHref = $x("//h5[text()='Book Store Application']");
 
+
     public MainPage(String url){
         Selenide.open(url);
     }

@@ -1,7 +1,6 @@
 import Pages.MainPage;
 import Pages.PracticeFormPage;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -10,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FormsTest extends BaseTest{
     private final static String BASE_URL = "https://demoqa.com";
     private final static String IMAGE1_URL = "C:\\Users\\MoonJazz\\IdeaProjects\\SelenidePetProject\\src\\test\\resources\\files\\image1.jpg";
+    private final static String IMAGE1_URL1 = ClassLoader.getSystemResource("files/image1.jpg").getPath();
 
     private final static String NAME = "Test Name";
     private final static String EMAIL = "example@ex.com";
@@ -31,7 +31,7 @@ public class FormsTest extends BaseTest{
         practiceFormPage.setMobile(NUMBER);
         practiceFormPage.setDateOfBirth();
         practiceFormPage.setHobbies();
-        practiceFormPage.setUploadPicture(IMAGE1_URL);
+        practiceFormPage.setUploadPicture(IMAGE1_URL1);
         practiceFormPage.setCurrentAddress(ADDRESS);
         practiceFormPage.clickOnStatesNCR();
         practiceFormPage.clickOnStatesDelhi();

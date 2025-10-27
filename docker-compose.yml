@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jenkins/jenkins:2.528.1-jdk21
+    container_name: jenkins-test
+    restart: unless-stopped
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./:/var/jenkins_home/workspace/Test
+volumes:
+  jenkins_home:

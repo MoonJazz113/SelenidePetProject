@@ -1,12 +1,7 @@
 import Pages.AlertsPage;
 import Pages.MainPage;
-import Pages.PracticeFormPage;
 import Pages.WindowsPage;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AlertFrameWindowsTest extends BaseTest{
